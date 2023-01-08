@@ -4,7 +4,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import StatesGroup, State
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, ContentTypes
 
-from config import API_TOKEN, TOKEN
+from config import API_TOKEN
 from plugins import upload_file, create_folder, list_dir
 from sql_lite import db_start, create_profile, update_profile, create_project
 

@@ -30,7 +30,17 @@ def list_dir(path):
         dirs.append(i['name'])
     return dirs
 
+def list_files(path):
+    r = requests.get(f'{URL}?path={path}', headers=headers)
+    inf = json.loads(r.text)
+    emb = inf['_embedded']['items']
+    dirs = []
+    for i in emb:
+        dirs.append(i['name'])
+    return dirs
+    # print(inf)
 
+list_files("Объекты/")
 
 def create_folder(path):
     requests.put(f'{URL}?path={path}', headers=headers)
